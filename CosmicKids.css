@@ -59,10 +59,7 @@ body {background-image: url(SpaceBackground.jpeg);
             flex-wrap: wrap;
             justify-content: center;
         }
-#team-section h2 {
-
-                    text-align: center;
-}
+#team-section h2 {text-align: center;}
 #teamp  {text-align: center;
     justify-content: center;}
 
