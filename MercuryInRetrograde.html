@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="CosmicKids.css">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Homenaje&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+        <title>MercuryInRetrograde</title>
+      </head>
+    <body>
+      <img id="logo" src="Comic Kids.png">
+      <div id="header">
+       <h1>Cosmic Kids NYC</h1>
+      </div>
+      <div id="menu">
+          <h1>Menu</h1>
+          <ul>
+            <li><a href="CosmicKidsHomepage.html">Home</a></li>
+            <li><a href="CosmicKidsISS.html".html">International Space Station</a></li>
+            <li><a href="MercuryInRetrograde.html">Is Mercury in Retrograde?: Planetary Orbits</a></li>
+            <li><a href="SunriseSunset.html">Sunrise, Sunset</a></li>
+            <li><a href="CosmicKidsAbout.html">About</a></li>
+            <li><a href="al_page3.html">Contact</a></li>
+        </ul>
+      </div>
+        <div>
+          <h1>Is Mercury in Retrograde?: Planetary Orbits</h1>
+          <p>Astronomers now recognize eight planets:</p>
+          <ol>
+            <li>Mercury</li>
+            <li>Venus</li>
+            <li>Earth</li>
+            <li>Mars</li>
+            <li>Jupiter</li>
+            <li>Saturn</li>
+            <li>Uranus</li>
+            <li>Neptune</li>
+          </ol>
+          <p>Five dwarf planets:</p>
+          <ol>
+            <li>Ceres</li>
+            <li>Pluto</li>
+            <li>Makemake</li>
+            <li>Haumea</li>
+            <li>Eris</li>
+          </ol>
+          <p>More than 150 moons, and many, many asteroids and other small objects (Figure below). These objects move in regular and predictable paths around the Sun.</p>
+          <a target="_blank" href="Planets2008.jpg"><img src="Planets2008.jpg"></a>
+          <h3>Relative sizes of the Sun, planets, and dwarf planets and their positions relative to each other are to scale. The relative distances are not to scale.</h3>
+        </div>
+        <div class="video">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/SmyMQ_SdpNc?si=jD4E1DxZ1wuu6fWa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div>
+          <h2>The Size and Shape of Planetary Orbits</h2>
+          <p>The figure below shows the relative sizes of the orbits of the planets, asteroid belt, and Kuiper belt. In general, the farther away from the Sun, the greater the distance from one planet’s orbit to the next. The orbits of the planets are not circular but slightly elliptical, with the Sun located at one of the foci.  Other bodies that orbit the Sun, such as comets and Kuiper Belt objects, have more highly elliptical orbits.</p>
+          <a target="_blank" href="Oort_cloud_Sedna_orbit.jpg"><img src="Oort_cloud_Sedna_orbit.jpg"></a>
+          <h3>The relative sizes of the orbits of planets in the solar system. The inner solar system (Mercury, Venus, Earth, and Mars) and asteroid belt is on the upper left. The upper right shows the outer planets (Jupiter, Saturn, Uranus, and Neptune) as well as the Kuiper belt.</h3>
+          <p>While studying the solar system, Johannes Kepler discovered the relationship between the time it takes a planet to make one complete orbit around the Sun, its "orbital period," and the distance from the Sun to the planet. If the orbital period of a planet is known, then it is possible to determine the planet’s distance from the Sun. This is how astronomers without modern telescopes could determine the distances to other planets within the solar system.</p>
+          <p>The further a planet is from the Sun, the longer its orbital period.  For example, Jupiter is the fifth planet from the Sun.  Jupiter’s orbital period is 11.86 times longer than Earth’s, meaning that one year on Jupiter is equal to 11.86 years on Earth.</p>
+          <p>How old are you on Earth? How old would you be if you lived on Jupiter? How many days is it until your birthday on Earth? How many days until your birthday if you lived on Saturn?</p>
+        </div>
+        <div>
+          <h1>Is Mercury in Retrograde?</h1>
+          <p>Mercury does not actually orbit backwards. From our position on Earth, we perceive it to be moving backwards. As we have just learned above, the further a planet is from the Sun, the longer its orbital period. This is also means the closer it is, the faster the orbital period will be.</p>
+          <p>Mercury's orbital period is way faster than ours because it is the closest planet to the sun. About three or four times a year, Mercury speeds past Earth, and that is when we experience a Mercury retrograde period. This period lasts for about three-and-a-half weeks. </p>
+        </div>
+        <div>
+          <h2>Type in a date to find out if Mercury is in retrograde!</h2>
+          <input type="text" id="dateInput" placeholder="YYYY-MM-DD">
+          <button id="checkButton">Check</button>
+        <div>
+          
+          <div id="result"></div>
+        
+          <script>
+            const api = 'https://mercuryretrogradeapi.com/?date=';
+            const dateInput = document.getElementById('dateInput');
+            const checkButton = document.getElementById('checkButton');
+            const resultDiv = document.getElementById('result');
+        
+            checkButton.addEventListener('click', () => {
+              const date = dateInput.value;
+        
+              if (!date.match(/^\d{4}-\d{2}-\d{2}$/)) {
+                resultDiv.textContent = 'Please enter a valid date in YYYY-MM-DD format.';
+                return;
+              }
+        
+              fetch(api + date)
+                .then(response => response.json())
+                .then(data => {
+                  if (data.error) {
+                resultDiv.textContent = `Error: ${data.error}`;
+                  } else {
+                    if (data.is_retrograde) {resultDiv.textContent = `Yes, Mercury is in retrograde on ${date}.`;  } 
+                    else { resultDiv.textContent = `No, Mercury is not in retrograde on ${date}.`;}
+                  }
+                })
+                .catch(error => {
+                  resultDiv.textContent = 'An error occurred while connecting to the API. Please try again later.';
+                  console.error('Error:', error);
+                });
+            });
+          </script>
+        <div id="footer">
+          Page by Allie Schwam
+          © SG Gladstone, Allie Schwam, and Kevin Zhang 2024
+        </div>
+      </body>
+  </html>

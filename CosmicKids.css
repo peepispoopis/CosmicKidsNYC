@@ -1,0 +1,106 @@
+body {background-image: url(SpaceBackground.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;}
+#header {
+    background-color: darkblue;
+    font-family: "Space Grotesk", "consolas", sans-serif;
+    color: blanchedalmond;
+    text-align: center;
+    width: 100%;
+    border-bottom: solid;
+    border-width: thick;
+    padding: 10px;
+    margin-bottom: 15px;
+    }
+#footer {clear: both;
+        text-align: center;
+        background-color: darkblue;
+        height: fit-content;
+        margin-top: 500px;
+        font-family: "consolas", sans-serif;
+        color: blanchedalmond;
+        }
+#menu { 
+    margin-left:0;
+    padding-top: 5px;
+    padding-bottom: 80px;
+    padding-right: 15px;
+    color: slateblue;
+    background-color: black;
+    width: 400px;
+    height: 150px;
+    font-family: "consolas", sans-serif;
+    position: relative;
+    }
+#homepage {margin: 0 0 10px 0;
+            background-color: midnightblue;
+            color: goldenrod;
+            text-align: left;}
+#homepageimg {flex-shrink: 0;
+            margin-left: 10%;
+            background-color: midnightblue;}
+#homepageimg img {max-width: 500px;
+                height: auto;
+                border-radius: 10px;}
+#textField {color: goldenrod;}
+#logo {position: absolute;
+        float: left;
+        max-height: auto;
+        max-width: 100px;
+        margin: auto;}
+#result {color: goldenrod;
+        font-family: Helvetica, Arial, sans-serif;}
+.main {position: relative;
+        margin: auto;
+        width: auto;
+        padding: 20px;
+        background-color: black;
+        margin: 5px;
+        }
+.video {width: 1000px;
+        height: 563px;}
+.container {padding-top: 150px;
+        padding-left: 20px;
+        background-color: midnightblue;
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;}
+.text-container {
+                margin-left: 10%;
+                background-color: midnightblue;
+                max-width: 100%;
+                min-width: 400px;}
+ol {list-style-type: decimal;
+    font-family: "consolas", sans-serif;
+    color: darkkhaki;}
+ul {list-style-type: circle;
+        color: darkkhaki;}
+h1 {font-size: xx-large;
+    font-family: Helvetica, Arial, sans-serif;
+    color: aliceblue;
+    text-align: center;}
+h2 {font-size: medium;
+    font-family: 'Helvetica', Arial, sans-serif;
+    text-align: left;
+    color: aliceblue;}
+h3 {font-size: smaller;
+    font-family: Helvetica, Arial, sans-serif;
+    color: aliceblue;
+    font-weight: lighter;}
+p  {background-color: black;
+    color: aliceblue;
+    font-family: Helvetica, Arial, sans-serif;}
+div {width: 100%;
+    height: fit-content;
+    margin: 20px;
+    background-color: black;}
+img {width: 50%;
+    margin: auto;}
+a {color: lightskyblue;}
+
+      
