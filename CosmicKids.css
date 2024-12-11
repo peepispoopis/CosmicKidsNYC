@@ -43,7 +43,8 @@ body {background-image: url(SpaceBackground.jpeg);
             background-color: midnightblue;}
 #homepageimg img {max-width: 500px;
                 height: auto;
-                border-radius: 10px;}
+                border-radius: 10px;
+                margin-right: auto}
 #textField {color: goldenrod;}
 #logo {position: absolute;
         float: left;
